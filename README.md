@@ -615,7 +615,7 @@ generación
 SERCOM](Imagenes/Entrega_rechazada_paso5.png)
 
 ![\[fig:class01\]Pruebas Realizadas
-SERCOM](Imagenes/Entrega_rechazada_paso_5_2.png)
+SERCOM](Imagenes/Entrega_rechazada_paso5_2.png)
 
 Fallas en ‘Invalid File’ y ‘Single Word’
 ----------------------------------------
