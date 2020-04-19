@@ -409,26 +409,26 @@ ejecutable](Imagenes/errores_de_generacion_SERCOM_paso2.png)
 
 Los siguientes errores refieren al mismo problema:
 
--   ./`paso2_wordscounter`.h:7:5: error: unknown type name ’`(`size_t)’
-    `(`size_t) words;
+-   ./`paso2_wordscounter`.h:7:5: error: unknown type name 'size_t'
+    size_t words;
 
 -   ./`paso2_wordscounter`.h:20:1: error: unknown type name
-    ’`(`size_t)’ `(`size_t) `wordscounter_get_words`(`wordscounter_t`* self);
+    'size_t' size_t `wordscounter_get_words`(`wordscounter_t` *self);
 
 -   ./`paso2_wordscounter`.h:25:49: error: unknown type name ’FILE’ void
-    `wordscounter_process`(`wordscounter_t`* self, FILE* text_file);
+    `wordscounter_process`(`wordscounter_t` *self, FILE *text_file);
 
 Este es que se esta utilizando una librería que no fue incluida, la
 misma es 'stdio.h'. Los siguientes errores son consecuencias del error
 anterior:
 
 -   ./`paso2_wordscounter`.c:17:8: error: conflicting types for
-    ’`wordscounter_get_words`’ `(`size_t)
-    `wordscounter_get_words`(`wordscounter_t`* self)
+    ’`wordscounter_get_words`’ size_t
+    `wordscounter_get_words`(`wordscounter_t` *self)
 
 -   ./`paso2_wordscounter`.c:20:8: note: previous declaration of
-    ’`wordscounter_get_words`’ was here `(`size_t)
-    `wordscounter_get_words`(`wordscounter_t`* self);
+    ’`wordscounter_get_words`’ was here size_t
+    `wordscounter_get_words`(`wordscounter_t` *self);
 
 Estos se deben a que en el archivo `paso2_wordscounter`.c esta incluida
 la librería 'stdio.h' pero en el archivo `paso2_wordscounter`.h no lo
@@ -437,11 +437,11 @@ declaración pero si en su implementación. Al no estar seguro de que
 coincidan ambos datos el compilador devuelve este error. Por último:
 
 -   ./`paso2_wordscounter`.c:30:25: error: implicit declaration of
-    function ’malloc’ \[-Wimplicit-function-declaration\] char*
-    `delim_words` = malloc(7 \* sizeof(char));
+    function ’malloc’ [-Wimplicit-function-declaration] char*
+    `delim_words` = malloc(7 * sizeof(char));
 
 -   ./`paso2_wordscounter`.c:30:25: error: incompatible implicit
-    declaration of built-in function ’malloc’ \[-Werror\]
+    declaration of built-in function ’malloc’ [-Werror]
 
 -   ./`paso2_wordscounter`.c: 30:25: note: include ’&lt;stdlib.h&gt;’ or
     provide a declaration of ’malloc’
