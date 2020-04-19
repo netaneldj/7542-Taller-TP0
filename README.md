@@ -155,7 +155,7 @@ El debugger es la herramienta principal para ver qué pasa en un
 programa. En este trabajo utilizaremos gdb. La forma de iniciarlo es “gdb
 executable”.  
 
-¿Para qué sirve ​ Valgrind​ ? ¿Cuáles son sus opciones más comunes?
+¿Para qué sirve Valgrind? ¿Cuáles son sus opciones más comunes?
 -------------------------------------------------------------------
 
 Valgrind es un marco de instrumentación para construir herramientas de
