@@ -64,6 +64,8 @@ pantalla el mensaje “Hola Mundo” y finalizó retornando 0 (cero).
 ![\[fig:class01\]Compilación y ejecución sin
 valgrind](Imagenes/ejecutar_hola_mundo.png)
 
+Ejecución con valgrind:
+
 ![\[fig:class01\]Ejecución con
 valgrind](Imagenes/valgrind_hola_mundo.png)
 
@@ -89,63 +91,59 @@ Los temas a repasar en esta sección son los siguientes:
 ### Funciones para el manejo de archivos
 
 La estructura de datos FILE es definida en el fichero de cabecera
-stdio.h para el manejo de ficheros. Siempre usaremos punteros a estas
-estructuras.La sintaxis de sus funciones principales es:
+'stdio.h' para el manejo de archivos. Siempre se usaran punteros a estas
+estructuras. La sintaxis de sus funciones principales es la siguiente:
 
--   fopen: FILE \*fopen(char \*nombre, char \*modo);
+-   fopen: FILE *fopen(char *nombre, char *modo);
 
--   fclose: int fclose(FILE \*fichero);
+-   fclose: int fclose(FILE *fichero);
 
 ### Manejo de memoria dinámica
 
--   C y C++ son lenguajes de bajo nivel para que el programador pueda
+-   C y C++ son lenguajes de bajo nivel en donde el programador puede
     tener un control absoluto de dónde y cómo se ejecuta el código.
 
 ### Punteros y aritmética de punteros
 
--   El tamaño de un puntero no depende de a que tipo apunta; todos los
-    punteros ocupan el mismo tamaño (que depende de la arquitectura).
+-   El tamaño de un puntero no depende de a que tipo apunta
+-   Todos los punteros ocupan el mismo tamaño (depende de la arquitectura).
 
 ### Entrada y salida estándar
 
 Las funciones estándar de entrada/salida se definen el el fichero de
-cabeceras stdio.h.Las funciones principales son:
+cabecera 'stdio.h'. La sintaxis de sus funciones principales es la siguiente:
 
--   printf: escritura con formato (print-format) int printf(const char
-    \*fmt, ...);
+-   printf: escritura con formato (print-format)  
+        int printf(const char *fmt, ...);
 
--   scanf: lectura con formato (scan-format) int scanf(const char \*fmt,
-    ...);
+-   scanf: lectura con formato (scan-format)  
+        int scanf(const char *fmt, ...);
 
 ### Proceso de compilación
 
 La compilación es un proceso de conversión del código fuente en código
-objeto. Se realiza con la ayuda del compilador. El compilador verifica
-el código fuente en busca de errores sintácticos o estructurales, y si
-el código fuente está libre de errores, genera el código objeto. El
-proceso de compilación c convierte el código fuente tomado como entrada
-en el código objeto o código máquina. El proceso de compilación se puede
-dividir en cuatro pasos, es decir, preprocesamiento, compilación,
-ensamblaje y vinculación(linker).El preprocesador toma el código fuente
-como entrada y elimina todos los comentarios del código fuente. El
-preprocesador toma la directiva del preprocesador y la interpreta. Por
-ejemplo, si &lt;stdio.h&gt;, la directiva está disponible en el
-programa, entonces el preprocesador interpreta la directiva y reemplaza
-esta directiva con el contenido del archivo ’stdio.h’.
+objeto. El compilador verifica el código fuente en busca de errores sintácticos o estructurales, y si
+el código fuente está libre de errores, genera el código objeto.   
+El proceso de compilación c convierte el código fuente en código objeto o código máquina.   
+El proceso de compilación se puede dividir en los siguientes cuatro pasos:
+-   Preprocesamiento   
+-   Compilación  
+-   Ensamblaje  
+-   Vinculación(linker)  
 
 ### Uso de operadores a nivel de bits
 
 Los operadores bitwise se pueden usar para realizar operaciones a nivel
-de bit en variables.Los operadores bitwise admitidos en C son los
+de bit en variables. Los operadores bitwise admitidos en C son los
 siguientes:
 
--   **Y** en el bit y
+-   **&** en el bit y
 
 -   **|** bitwise inclusive O
 
--   **\^** OR exclusivo a nivel de bit (XOR)
+-   **^** OR exclusivo a nivel de bit (XOR)
 
--   ** ** bitwise no (complemento de uno)
+-   **∼** bitwise no (complemento de uno)
 
 -   **&lt;&lt;** desplazamiento lógico a la izquierda
 
@@ -154,12 +152,8 @@ siguientes:
 ### Concepto y uso del debugger
 
 El debugger es la herramienta principal para ver qué pasa en un
-programa. En este trabajo utilizaremos gdb.La forma de iniciarlo es “gdb
-executable”. El “executable” será conveniente que tenga su “debug info”,
-esto es, la información que el compilador le adosa para decirle al
-debugger qué líneas de código fuente corresponden a cuáles instrucciones
-de código máquina. El GCC agrega esta información sólo si se le pasa la
-opción -g en el momento de compilar.
+programa. En este trabajo utilizaremos gdb. La forma de iniciarlo es “gdb
+executable”.  
 
 ¿Para qué sirve ​ Valgrind​ ? ¿Cuáles son sus opciones más comunes?
 -------------------------------------------------------------------
@@ -171,20 +165,16 @@ tareas similares que lo ayudan a mejorar sus programas.
 
 Las herramientas que se suministran como estándar son:
 
--   **Memcheck** es un detector de errores de memoria. Le ayuda a hacer
-    que sus programas, particularmente los escritos en C y C ++, sean
-    más correctos.
+-   **Memcheck** es un detector de errores de memoria.  
 
 -   **Cachegrind** es un generador de perfiles de predicción de
-    ramificación y caché. Le ayuda a hacer que sus programas se ejecuten
-    más rápido.
+    ramificación y caché.  
 
 -   **Callgrind** es un generador de perfiles de caché que genera
     gráficos de llamadas. Tiene cierta superposición con Cachegrind,
-    pero también recopila información que Cachegrind no tiene.
+    pero también recopila información que Cachegrind no tiene.  
 
--   **Helgrind** es un detector de errores de hilo. Le ayuda a hacer que
-    sus programas multiproceso sean más correctos.
+-   **Helgrind** es un detector de errores de hilo. 
 
 -   **DRD** también es un detector de errores de hilo. Es similar a
     Helgrind, pero utiliza diferentes técnicas de análisis y, por lo
@@ -211,11 +201,10 @@ Las herramientas que se suministran como estándar son:
 
 El operador sizeof es un operador unario en tiempo de compilación y se
 usa para calcular el tamaño de su operando. Devuelve el tamaño de una
-variable. Se puede aplicar a cualquier tipo de datos, tipo flotante,
-variables de tipo puntero.Cuando sizeof () se usa con los tipos de
-datos, simplemente devuelve la cantidad de memoria asignada a ese tipo
-de datos. El valor de salida de sizeof(char) no depende del compilador
-en el que se este trabajando, va ser simpre 1 byte, mientras que para
+variable. Se puede aplicar a cualquier tipo de datos y a variables de tipo puntero. 
+Cuando sizeof () se usa con los tipos de datos, simplemente devuelve la cantidad de 
+memoria asignada a ese tipo de datos. El valor de salida de sizeof(char) no depende 
+del compilador en el que se este trabajando, va ser simpre 1 byte, mientras que para
 sizeof(int) podra ser 2 bytes o 4 bytes dependiendo de si se esta
 trabajando con un compilador de 16 bits, 32 bits o 64 bits.
 
@@ -223,8 +212,8 @@ trabajando con un compilador de 16 bits, 32 bits o 64 bits.
 ------------------------------------------------------------------------------------------
 
 El sizeof() de una struct de C no es igual a la suma del sizeof() de
-cada uno sus elementos. Para demostrar esto realice un contra ejemplo
-donde genero un programa que imprime por pantalla el sizeof() de un
+cada uno sus elementos. Para demostrar esto se realizó un contra ejemplo
+donde corro un programa que imprime por pantalla el sizeof() de un
 struct que contiene un char, un int, un float y un double.
 
 ![\[fig:class01\]Sizeof() strcut vs suma de sizeof() de cada
@@ -245,12 +234,12 @@ comando de Linux son stdin, stdout y stederr. stdin es el flujo de
 entrada estándar. La salida de texto del comando al shell se entrega a
 través de la secuencia stdout (salida estándar). Los mensajes de error
 del comando se envían a través de la secuencia stderr (error
-estándar).Las secuencias stdin, stdout y stderr se pueden redireccionar
+estándar). Las secuencias stdin, stdout y stderr se pueden redireccionar
 mediante los caracteres ’&gt;’ y ’&lt;’. A continuación mostraremos un
 ejemplo donde la salida del programa es mostrada en un txt utilizando el
 caracter ’&gt;’. El comando pipe ’|’ es utilizado para conectar el
 stdout de un programa con el stdin de otro. Se utiliza de la forma:
-sentencia|sentencia2
+sentencia1|sentencia2
 
 ![\[fig:class01\]Redireccionamiento
 stdout](Imagenes/redireccionamiento.png)
@@ -369,7 +358,7 @@ Los errores que encontramos son los siguientes:
 
 Todos se encuentran en `paso1_main`.c y refieren al mismo problema. Se
 esta utilizando una libreria que no fue incluida, la misma es
-”`paso1_wordscounter`.h. Estos errores se producen en la etapa de
+`paso1_wordscounter`.h. Estos errores se producen en la etapa de
 compilación, previo a la etapa de linkeo.
 
 Warnings
@@ -386,7 +375,7 @@ Cambios realizados respecto de la entrega anterior
 --------------------------------------------------
 
 En esta entrega se incluyo al main la librería ”`paso2_wordscounter`.h”,
-la cual era necesaria para poder utilizar sus declaraciones.Además
+la cual era necesaria para poder utilizar sus declaraciones. Además
 corrigieron todos los errores de normas de programación que se habían
 cometido en la entrega anterior. Entre ellos se cambio strcpy por memcpy
 donde strcpy solo copiaba cadenas de texto mientras que memcpy copia
@@ -413,43 +402,42 @@ Errores de generación
 A continuación se analizarán los errores que impidieron generar el
 ejecutable de esta entrega. Los números que están entre corchetes al
 final de cada error representan que tan grave es el error. Estos van del
-1 al 5 siendo esta última la puntuación máxima.
+1 al 5 siendo esta última la puntuación máxima. 
 
 ![\[fig:class01\]Errores de generación de
 ejecutable](Imagenes/errores_de_generacion_SERCOM_paso2.png)
 
 Los siguientes errores refieren al mismo problema:
 
--   ./`paso2_wordscounter`.h:7:5: error: unknown type name ’`(`size\_t)’
-    `(`size\_t) words;
+-   ./`paso2_wordscounter`.h:7:5: error: unknown type name ’`(`size_t)’
+    `(`size_t) words;
 
 -   ./`paso2_wordscounter`.h:20:1: error: unknown type name
-    ’`(`size\_t)’ `(`size\_t) `wordscounter_get_words`(`wordscounter_t`
-    \*self);
+    ’`(`size_t)’ `(`size_t) `wordscounter_get_words`(`wordscounter_t`* self);
 
 -   ./`paso2_wordscounter`.h:25:49: error: unknown type name ’FILE’ void
-    `wordscounter_process`(`wordscounter_t` \*self, FILE \*text\_file);
+    `wordscounter_process`(`wordscounter_t`* self, FILE* text_file);
 
 Este es que se esta utilizando una librería que no fue incluida, la
-misma es “stdio.h”.Los siguientes errores son consecuencias del error
+misma es 'stdio.h'. Los siguientes errores son consecuencias del error
 anterior:
 
 -   ./`paso2_wordscounter`.c:17:8: error: conflicting types for
-    ’`wordscounter_get_words`’ `(`size\_t)
-    `wordscounter_get_words`(`wordscounter_t` \*self)
+    ’`wordscounter_get_words`’ `(`size_t)
+    `wordscounter_get_words`(`wordscounter_t`* self)
 
 -   ./`paso2_wordscounter`.c:20:8: note: previous declaration of
-    ’`wordscounter_get_words`’ was here `(`size\_t)
-    `wordscounter_get_words`(`wordscounter_t` \*self);
+    ’`wordscounter_get_words`’ was here `(`size_t)
+    `wordscounter_get_words`(`wordscounter_t`* self);
 
 Estos se deben a que en el archivo `paso2_wordscounter`.c esta incluida
-la librería “stdio.h” pero en el archivo `paso2_wordscounter`.h no lo
+la librería 'stdio.h' pero en el archivo `paso2_wordscounter`.h no lo
 esta. Entonces no sabe que tipo dato devuelve la función en su
 declaración pero si en su implementación. Al no estar seguro de que
-coincidan ambos datos el compilador devuelve este error.Por último:
+coincidan ambos datos el compilador devuelve este error. Por último:
 
 -   ./`paso2_wordscounter`.c:30:25: error: implicit declaration of
-    function ’malloc’ \[-Wimplicit-function-declaration\] char\*
+    function ’malloc’ \[-Wimplicit-function-declaration\] char*
     `delim_words` = malloc(7 \* sizeof(char));
 
 -   ./`paso2_wordscounter`.c:30:25: error: incompatible implicit
@@ -473,8 +461,8 @@ Paso 3: SERCOM - Errores de generación 3
 Cambios realizados respecto de la entrega anterior
 --------------------------------------------------
 
-En esta entrega se incluyo la librería ”stdlib.h” la cual era necesaria
-para poder utilizar la función “malloc”.
+En esta entrega se incluyo la librería 'stdlib.h' la cual era necesaria
+para poder utilizar la función 'malloc'.
 
 ![\[fig:class01\]Cambios realizados entre el paso2 y el
 paso3](Imagenes/cambios_paso2_paso3.png)
@@ -542,7 +530,7 @@ Ejecución de Valgrind en TDA
 
 La herramienta Memcheck de Valgrind es un detector de errores de
 memoria. En este caso la misma nos informa que pedimos memoria para
-alocar bytes y nunca la libe- ramos. Esto se puede observar en el HEAP
+alocar bytes y nunca la liberamos. Esto se puede observar en el HEAP
 SUMMARY.
 
 ![\[fig:class01\]Valgrind TDA
@@ -575,15 +563,15 @@ mismo error ya que de igual manera se copiaría al buffer.
 Segmentation fault y buffer overflow
 ------------------------------------
 
-Se define como violación de acceso (violación segmentation fault en
-Inglés) al intento fallido de acceso a información o a programas a los
+Se define como violación de acceso (segmentation fault en
+inglés) al intento fallido de acceso a información o a programas a los
 que no se tiene autorización para ver o modificar. Este mensaje puede
 ser causado por la configuración de software, por los programadores o
-por fallo en el hardware, siendo los más comunes los 2 primeros.Un
-desbordamiento de búfer (buffer overflow) es un error de software que se
+por fallo en el hardware, siendo los más comunes los 2 primeros.  
+Un desbordamiento de búfer (buffer overflow en inglés) es un error de software que se
 produce cuando un programa no controla adecuadamente la cantidad de
 datos que se copian sobre un área de memoria reservada a tal efecto
-(buffer): Si dicha cantidad es superior a la capacidad preasignada, los
+(buffer). Si dicha cantidad es superior a la capacidad preasignada, los
 bytes sobrantes se almacenan en zonas de memoria adyacentes,
 sobrescribiendo su contenido original, que probablemente pertenecían a
 datos o código almacenados en memoria. Esto constituye un fallo de
@@ -632,9 +620,9 @@ Fallas en ‘Invalid File’ y ‘Single Word’
 Por cada prueba que corra SERCOM que no resulte exitosa nos brinda una
 observación para poder interpretar mejor el error. También nos permite
 descargar los archivos de prueba para poder correrlos localmente en
-nuestras maquinas y de esta forma solucionar el problema.En el caso de
+nuestras maquinas y de esta forma solucionar el problema. En el caso de
 ’Invalid File’ la observación que nos brinda el sistema es “Se esperaba
-terminar con un código de retorno 1 pero se obtuvo 255”.En el caso de
+terminar con un código de retorno 1 pero se obtuvo 255”. En el caso de
 ’Single Word’ la observación que nos brinda el sistema es “La salida
 estándar no coincide con lo esperado (archivo ”`__stdout__.diff`“)”.
 Como podemos observar en la siguiente figura el programa nos devuelve
