@@ -39,12 +39,12 @@ importante configurar un entorno de trabajo local.
 ### Sistema operativo
 
 ![\[fig:class01\]Sistema operativo
-utilizado](Imagenes/Sistema_operativo.png)
+utilizado](Imagenes/sistema_operativo.png)
 
 ### Herramientas
 
 ![\[fig:class01\]Herramientas
-utilizadas](Imagenes/Herramientas.png)
+utilizadas](Imagenes/herramientas.png)
 
 Hola Mundo
 ----------
@@ -53,10 +53,10 @@ Se compilo y ejecuto una aplicación simple ISO C que imprimio por
 pantalla el mensaje “Hola Mundo” y finalizo retornando 0 (cero).
 
 ![\[fig:class01\]Compilación y ejecución sin
-valgrind](Imagenes/Ejecutar_Hola_Mundo.png)
+valgrind](Imagenes/ejecutar_hola_mundo.png)
 
 ![\[fig:class01\]Ejecución con
-valgrind](Imagenes/Valgrind_Hola_Mundo.png)
+valgrind](Imagenes/valgrind_hola_mundo.png)
 
 Repaso de C
 -----------
@@ -219,7 +219,7 @@ donde genero un programa que imprime por pantalla el sizeof() de un
 struct que contiene un char, un int, un float y un double.
 
 ![\[fig:class01\]Sizeof() strcut vs suma de sizeof() de cada
-elemento](Imagenes/Sizeof.png)
+elemento](Imagenes/sizeof.png)
 
 El resultado es distinto a la suma de cada uno de los sizeof(). Esto se
 debe a que el compilador agrega padding con el objetivo de ganar
@@ -244,7 +244,7 @@ stdout de un programa con el stdin de otro. Se utiliza de la forma:
 sentencia|sentencia2
 
 ![\[fig:class01\]Redireccionamiento
-stdout](Imagenes/Redireccionamiento.png)
+stdout](Imagenes/redireccionamiento.png)
 
 Paso 1: SERCOM - Errores de generación y normas de programación
 ===============================================================
@@ -257,7 +257,7 @@ fallidas y descargar los archivos de salida sterr donde podremos
 observar con mas detalle los errores obtenidos.
 
 ![\[fig:class01\]Entrega rechazada
-SERCOM](Imagenes/Entrega_rechazada_paso1.png)
+SERCOM](Imagenes/entrega_rechazada_paso1.png)
 
 Errores de normas de programación
 ---------------------------------
@@ -268,7 +268,7 @@ final de cada error representan que tan grave es el error. Estos van del
 1 al 5 siendo esta última la puntuación máxima.
 
 ![\[fig:class01\]Errores de normas de
-programación](Imagenes/Errores_normas_SERCOM_paso1.png)
+programación](Imagenes/errores_de_normas_de_programacion_SERCOM_paso1.png)
 
 En el archivo `paso1_wordscounter`.c encontramos:
 
@@ -335,7 +335,7 @@ final de cada error representan que tan grave es el error. Estos van del
 1 al 5 siendo esta última la puntuación máxima.
 
 ![\[fig:class01\]Errores de generación de
-ejecutable](Imagenes/Errores_de_generacion_SERCOM_paso1.png)
+ejecutable](Imagenes/errores_de_generacion_SERCOM_paso1.png)
 
 Los errores que encontramos son los siguientes:
 
@@ -384,7 +384,7 @@ donde strcpy solo copiaba cadenas de texto mientras que memcpy copia
 bytes sin importar su contenido.
 
 ![\[fig:class01\]Cambios realizados entre el paso1 y el
-paso2](Imagenes/Cambios_paso1_paso2.png)
+paso2](Imagenes/cambios_paso1_paso2.png)
 
 Entrega en SERCOM
 -----------------
@@ -393,10 +393,10 @@ En esta entrega no hubo errores de normas de programación pero de todas
 formas no resulto exitosa.
 
 ![\[fig:class01\]Entrega rechazada
-SERCOM](Imagenes/Entrega_rechazada_paso2.png)
+SERCOM](Imagenes/entrega_rechazada_paso2.png)
 
 ![\[fig:class01\]Entrega sin errores de normas de
-programación](Imagenes/Errores_de_normas_de_programacion_paso2.png)
+programación](Imagenes/errores_de_normas_de_programacion_SERCOM_paso2.png)
 
 Errores de generación
 ---------------------
@@ -407,7 +407,7 @@ final de cada error representan que tan grave es el error. Estos van del
 1 al 5 siendo esta última la puntuación máxima.
 
 ![\[fig:class01\]Errores de generación de
-ejecutable](Imagenes/Errores_de_generacion_SERCOM_paso2.png)
+ejecutable](Imagenes/errores_de_generacion_SERCOM_paso2.png)
 
 Los siguientes errores refieren al mismo problema:
 
@@ -468,7 +468,7 @@ En esta entrega se incluyo la librería ”stdlib.h” la cual era necesaria
 para poder utilizar la función “malloc”.
 
 ![\[fig:class01\]Cambios realizados entre el paso2 y el
-paso3](Imagenes/Cambios_paso2_paso3.png)
+paso3](Imagenes/cambios_paso2_paso3.png)
 
 Entrega en SERCOM
 -----------------
@@ -477,10 +477,10 @@ Al igual que la entrega anterior, esta no tuvo errores de normas de
 programación pero de todas formas no resulto exitosa.
 
 ![\[fig:class01\]Entrega rechazada
-SERCOM](Imagenes/Entrega_rechazada_paso3.png)
+SERCOM](Imagenes/entrega_rechazada_paso3.png)
 
 ![\[fig:class01\]Entrega sin errores de normas de
-programación](Imagenes/Errores_de_normas_de_programacion_paso3.png)
+programación](Imagenes/errores_de_normas_de_programacion_SERCOM_paso3.png)
 
 Errores de generación
 ---------------------
@@ -491,7 +491,7 @@ final de cada error representan que tan grave es el error. Estos van del
 1 al 5 siendo esta última la puntuación máxima.
 
 ![\[fig:class01\]Errores de generación de
-ejecutable](Imagenes/Errores_de_generacion_SERCOM_paso3.png)
+ejecutable](Imagenes/errores_de_generacion_SERCOM_paso3.png)
 
 El error obtenido se debe a que hay una referencia a ’wordscounter
 destroy’ dentro del main para la cual no se encontró definición en
@@ -511,7 +511,7 @@ definición de la función ’`wordscounter_ destroy`(`wordscounter_t`
 generación del ejecutable en el paso anterior.
 
 ![\[fig:class01\]Cambios realizados entre el paso3 y el
-paso4](Imagenes/Cambios_paso3_paso4.png)
+paso4](Imagenes/cambios_paso3_paso4.png)
 
 Entrega en SERCOM
 -----------------
@@ -523,10 +523,10 @@ tampoco resulto exitosa.
 
 ![\[fig:class01\]Entrega rechazada sin errores de normas ni de
 generación
-SERCOM](Imagenes/Entrega_rechazada_paso4.png)
+SERCOM](Imagenes/entrega_rechazada_paso4.png)
 
 ![\[fig:class01\]Pruebas Realizadas
-SERCOM](Imagenes/Entrega_rechazada_paso4_2.png)
+SERCOM](Imagenes/entrega_rechazada_paso4_2.png)
 
 Ejecución de Valgrind en TDA
 ----------------------------
@@ -537,10 +537,10 @@ alocar bytes y nunca la libe- ramos. Esto se puede observar en el HEAP
 SUMMARY.
 
 ![\[fig:class01\]Valgrind TDA
-SERCOM](Imagenes/Valgrind_TDA_paso4.png)
+SERCOM](Imagenes/valgrind_TDA_paso4.png)
 
 ![\[fig:class01\]HEAP SUMMARY Valgrind TDA
-SERCOM](Imagenes/Valgrind_TDA_Heap_Summary_paso4.png)
+SERCOM](Imagenes/valgrind_TDA_heap_summary_paso4.png)
 
 Si prestamos atención podemos observar que perdemos memoria debido a dos
 errores. El primero se produce en el archivo `paso4_main`.c en la
@@ -558,7 +558,7 @@ dentro de la función main. Esto se debe a que la función memcpy tomo una
 gran cantidad de datos y el buffer no la pudo soportar.
 
 ![\[fig:class01\]Valgrind Long Filename
-SERCOM](Imagenes/Valgrind_Long_Filename_paso4.png)
+SERCOM](Imagenes/valgrind_long_filename_paso4.png)
 
 En caso de utilizar la función strncpy en lugar de memcpy ocurriría el
 mismo error ya que de igual manera se copiaría al buffer.
@@ -599,7 +599,7 @@ siguientes:
     de memoria por dejarlo abierto)
 
 ![\[fig:class01\]Cambios realizados entre el paso4 y el
-paso5](Imagenes/Cambios_paso4_paso5.png)
+paso5](Imagenes/cambios_paso4_paso5.png)
 
 Entrega en SERCOM
 -----------------
@@ -612,10 +612,10 @@ exitosamente.
 
 ![\[fig:class01\]Entrega rechazada sin errores de normas ni de
 generación
-SERCOM](Imagenes/Entrega_rechazada_paso5.png)
+SERCOM](Imagenes/entrega_rechazada_paso5.png)
 
 ![\[fig:class01\]Pruebas Realizadas
-SERCOM](Imagenes/Entrega_rechazada_paso5_2.png)
+SERCOM](Imagenes/entrega_rechazada_paso5_2.png)
 
 Fallas en ‘Invalid File’ y ‘Single Word’
 ----------------------------------------
@@ -632,7 +632,7 @@ Como podemos observar en la siguiente figura el programa nos devuelve
 que hay 0 palabras en el archivo cuando en verdad contiene una..
 
 ![\[fig:class01\]stdout
-paso5](Imagenes/Stdout_paso5.png)
+paso5](Imagenes/stdout_paso5.png)
 
 Esto se debe a que el archivo de prueba no tiene ninguno de los
 caracteres separadores de palabra determinados en el programa.
@@ -646,7 +646,7 @@ dicho valor en la tabla ASCII vemos que es una ’d’. Esta coincide con la
 ultima letra de la palabra ’word’.
 
 ![\[fig:class01\]Hexadump
-paso5](Imagenes/Hexdump_paso5.png)
+paso5](Imagenes/hexdump_paso5.png)
 
 Ejecución con GDB
 -----------------
@@ -706,7 +706,7 @@ siguientes:
     sume (así pasa la prueba Single Word)
 
 ![\[fig:class01\]Cambios realizados entre el paso5 y el
-paso6](Imagenes/Cambios_paso5_paso6.png)
+paso6](Imagenes/cambios_paso5_paso6.png)
 
 Entregas realizadas
 -------------------
@@ -714,10 +714,10 @@ Entregas realizadas
 Las entregas realizadas hasta el momento son las siguientes:
 
 ![\[fig:class01\]Todas las entregas realizadas hasta el
-paso6](Imagenes/Entregas_realizadas_hasta_paso6.png)
+paso6](Imagenes/entregas_realizadas_hasta_paso6.png)
 
 Prueba local Single Word
 ------------------------
 
 ![\[fig:class01\]Prueba local Single Word
-paso6](Imagenes/Single_Word_local_paso6.png)
+paso6](Imagenes/single_word_local_paso6.png)
