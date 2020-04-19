@@ -23,16 +23,16 @@ Los objetivos del presente trabajo son los siguientes:
 
 -   Preparación de informe técnico
 
-En las siguientes secciones se vera plasmado el cumplimiento de los
+En las siguientes secciones se verá plasmado el cumplimiento de los
 objetivos.
 
 Secciones
 ---------
 
-El presente trabajo práctico está dividido en secciones que las podemos
-dividir en dos grandes categorías. La primera es la introducción en
-donde se enumeran los objetivos y se informa como se estructurara el
-informe.La segunda son los pasos en los que se dividió el proyecto. Allí
+El presente trabajo práctico está dividido en diferentes secciones las cuales se pueden
+agrupar en dos grandes categorías. La primera es la introducción en
+donde se enumeran los objetivos y se informa como se estructurará el
+informe. La segunda son los pasos en los que se dividió el proyecto. Allí
 se hará un análisis exhaustivo de cada paso.
 
 Paso 0: Entorno de Trabajo
@@ -58,8 +58,8 @@ utilizadas](Imagenes/herramientas.png)
 Hola Mundo
 ----------
 
-Se compilo y ejecuto una aplicación simple ISO C que imprimio por
-pantalla el mensaje “Hola Mundo” y finalizo retornando 0 (cero).
+Se compiló y ejecutó una aplicación simple ISO C que imprimió por
+pantalla el mensaje “Hola Mundo” y finalizó retornando 0 (cero).
 
 ![\[fig:class01\]Compilación y ejecución sin
 valgrind](Imagenes/ejecutar_hola_mundo.png)
