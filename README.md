@@ -1,3 +1,11 @@
+![image](Imagenes/logofiuba.jpg){width="6cm"} **Contador de Palabras** Taller de
+Programación I (75.42)\
+Primer cuatrimestre de 2020\
+
+**Alumno**:  Jamilis, Netanel David           
+**Número de Padrón**: 99093            
+**Email**: njamilis@fi.uba.ar
+
 Introducción
 ============
 
