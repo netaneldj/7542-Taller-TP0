@@ -656,33 +656,33 @@ Los comandos utilizados en GDB fueron los siguientes:
 ![\[fig:class01\]GDB info
 functions](Imagenes/GDB_paso5-2.png)
 
-info functions: Muestra la lista de funciones en el programa indicado.
+**info functions**: Muestra la lista de funciones en el programa indicado.
 
 ![\[fig:class01\]GDB list
 `wordscounter_next_state`](Imagenes/GDB_paso5-3.png)
 
-list `wordscounter_next_state`: Imprime las lineas que están alrededor
+**list wordscounter_next_state**: Imprime las lineas que están alrededor
 de la función indicada.
 
 ![\[fig:class01\]GDB list](Imagenes/GDB_paso5-4.png)
 
-list: Imprime las siguientes 10 lineas a partir de la ultima que se vio.
+**list**: Imprime las siguientes 10 lineas a partir de la ultima que se vio.
 
 ![\[fig:class01\]GDB: break
 45](Imagenes/GDB_paso5-5.png)
 
-break 45: Crea un punto de interrupción en una línea, dirección o
+**break 45**: Crea un punto de interrupción en una línea, dirección o
 función especificada. En este caso la linea 45.
 
 ![\[fig:class01\]GDB: run
 `input_single_word.txt`](Imagenes/GDB_paso5-6.png)
 
-run `input_single_word.txt`: Empieza la ejecución de una nueva instancia
+**run input_single_word.txt**: Empieza la ejecución de una nueva instancia
 del programa bajo GDB.
 
 ![\[fig:class01\]GDB: quit](Imagenes/GDB_paso5-7.png)
 
-quit: Finaliza la ejecución de GDB.
+**quit**: Finaliza la ejecución de GDB.
 
 El debbuger no se detuvo en el breakpoint de la linea 45 porque no
 ejecuto dicha linea.
