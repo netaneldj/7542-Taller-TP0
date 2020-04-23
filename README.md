@@ -4,7 +4,7 @@ Contador de Palabras
 **Alumno**:  Netanel David Jamilis           
 **Número de Padrón**: 99093            
 **Email**: njamilis@fi.uba.ar  
-**Github**: netaneldj\tp0
+**Github**: netaneldj/tp0
 
 
 Introducción
