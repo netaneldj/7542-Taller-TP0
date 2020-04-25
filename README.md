@@ -211,7 +211,7 @@ trabajando con un compilador de 16 bits, 32 bits o 64 bits.
 ¿El sizeof() de una struct de C es igual a la suma del sizeof() de cada uno sus elementos?
 ------------------------------------------------------------------------------------------
 
-El sizeof() de una struct de C no es igual a la suma del sizeof() de
+El sizeof() de una struct de C puede no ser igual a la suma del sizeof() de
 cada uno sus elementos. Para demostrar esto se realizó un contra ejemplo
 donde corro un programa que imprime por pantalla el sizeof() de un
 struct que contiene un char, un int, un float y un double.
@@ -224,7 +224,7 @@ debe a que el compilador agrega padding con el objetivo de ganar
 velocidad al momento de acceder a los datos del struct a cambio de
 perder memoria. En caso de necesitar esta memoria hay opciones de
 compilación que evita que el compilador realice padding, una de ellas es
-’package’.
+’package’ en GCC.
 
 STDIN, STDOUT, STDERR
 ---------------------
@@ -312,7 +312,8 @@ En el archivo `paso1_main`.c encontramos:
 
 -   ./`paso1_main`.c:12: Almost always, snprintf is better than strcpy
     \[runtime/printf\] \[4\] : Recomienda utilizar snprintf en vez de
-    strcpy en la linea 12.
+    strcpy en la linea 12, ya que snprintf permite especificar un largo 
+    máximo.
 
 -   ./`paso1_main`.c:15: An else should appear on the same line as the
     preceding \[whitespace/newline\] \[4\] : Hay un salto de linea entre
@@ -361,6 +362,9 @@ esta utilizando una libreria que no fue incluida, la misma es
 `paso1_wordscounter`.h. Estos errores se producen en la etapa de
 compilación, previo a la etapa de linkeo.
 
+Ojo, estos son todos warnings (lo podés ver porque empiezan con -W) tratados
+como errores durante la etapa de compilación.
+
 Warnings
 --------
 
@@ -374,7 +378,7 @@ Paso 2: SERCOM - Errores de generación 2
 Cambios realizados respecto de la entrega anterior
 --------------------------------------------------
 
-En esta entrega se incluyo al main la librería ”`paso2_wordscounter`.h”,
+En esta entrega se incluyó al main la librería ”`paso2_wordscounter`.h”,
 la cual era necesaria para poder utilizar sus declaraciones. Además
 corrigieron todos los errores de normas de programación que se habían
 cometido en la entrega anterior. Entre ellos se cambio strcpy por memcpy
@@ -400,9 +404,7 @@ Errores de generación
 ---------------------
 
 A continuación se analizarán los errores que impidieron generar el
-ejecutable de esta entrega. Los números que están entre corchetes al
-final de cada error representan que tan grave es el error. Estos van del
-1 al 5 siendo esta última la puntuación máxima. 
+ejecutable de esta entrega. 
 
 ![\[fig:class01\]Errores de generación de
 ejecutable](Imagenes/errores_de_generacion_SERCOM_paso2.png)
@@ -451,6 +453,10 @@ función “malloc” de la librería “stdlib.h” sin incluir esta última. E
 este caso el compilador nos esta haciendo notar este error diciendonos
 que incluyamos dicha librería o declaremos la función.
 
+Este era más difícil que eso: malloc tiene una implementación por default,
+que devuelve int en vez de void*. Eso es lo que te está diciendo el compilador,
+que la que usaste no coincide con la built-in. 
+
 Los errores de “unknown type name” e “implicit declaration of function”
 son previos a la etapa de compilación. El error “conflicting types”
 ocurre dentro de la etapa de compilación.
@@ -461,7 +467,7 @@ Paso 3: SERCOM - Errores de generación 3
 Cambios realizados respecto de la entrega anterior
 --------------------------------------------------
 
-En esta entrega se incluyo la librería 'stdlib.h' la cual era necesaria
+En esta entrega se incluyó la librería 'stdlib.h' la cual era necesaria
 para poder utilizar la función 'malloc'.
 
 ![\[fig:class01\]Cambios realizados entre el paso2 y el
@@ -483,9 +489,7 @@ Errores de generación
 ---------------------
 
 A continuación se analizarán los errores que impidieron generar el
-ejecutable de esta entrega. Los números que están entre corchetes al
-final de cada error representan que tan grave es el error. Estos van del
-1 al 5 siendo esta última la puntuación máxima.
+ejecutable de esta entrega.
 
 ![\[fig:class01\]Errores de generación de
 ejecutable](Imagenes/errores_de_generacion_SERCOM_paso3.png)
@@ -559,6 +563,8 @@ SERCOM](Imagenes/valgrind_long_filename_paso4.png)
 
 En caso de utilizar la función strncpy en lugar de memcpy ocurriría el
 mismo error ya que de igual manera se copiaría al buffer.
+Sí, también se podría decir que cambiar el tope por el tamaño del buffer
+destino soluciona el overflow pero introduce un bug.
 
 Segmentation fault y buffer overflow
 ------------------------------------
@@ -642,6 +648,9 @@ En la siguiente figura se puede observar que el ultimo carácter es un
 dicho valor en la tabla ASCII vemos que es una ’d’. Esta coincide con la
 ultima letra de la palabra ’word’.
 
+Sí, pero fijate que hd te da el output en binario a la izquierda, y en texto
+a la derecha. Así la próxima no te hace falta ponerte a usar una tabla ASCII.
+
 ![\[fig:class01\]Hexadump
 paso5](Imagenes/hexdump_paso5.png)
 
@@ -686,6 +695,8 @@ del programa bajo GDB.
 
 El debbuger no se detuvo en el breakpoint de la linea 45 porque no
 ejecuto dicha linea.
+
+=D Pero por qué no se detuvo en esa línea?
 
 Paso 6: SERCOM - Entrega exitosa
 ================================
